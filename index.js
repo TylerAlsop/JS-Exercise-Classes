@@ -146,7 +146,7 @@ class Instructor extends Lambdasian {
     this.favLanguage = favLanguage;
     this.catchPhrase = catchPhrase;
   }
-  demo(subject){
+  demo("subject"){
     return `Today we are learning about ${subject}`;
   }
 }
