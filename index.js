@@ -48,12 +48,12 @@ class Person {
   }
   eat(someFood){
     if (this.stomach.length < 10){
-      return this.stomach.push(someFood);
+      this.stomach.push(someFood);
     }
   }
 
   poop(){
-    return this.stomach.length = 0;
+    this.stomach.length = 0;
   }
 
   toString(){
@@ -82,11 +82,21 @@ class Car {
     this.tank = 0;
     this.odometer = 0;
   }
-  .fill(gallons){
-    return this.tank = this.tank + gallons;
+
+  fill(gallons){
+    this.tank = this.tank + gallons;
   }
 
-  
+  drive(distance){
+    if ((this.tank - distance / this.milesPerGallon) > 0){
+      this.odometer = this.odometer + distance;
+      this.tank = this.tank - distance / this.milesPerGallon;
+    } else if ((this.tank - distance / this.milesPerGallon) < 0) {
+      this.odometer = 
+    } else {
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }
+  }
 }
 
 /*
