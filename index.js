@@ -93,7 +93,7 @@ class Car {
     if (tankAfterDrive > 0){
       this.odometer = this.odometer + distance;
       this.tank = tankAfterDrive;
-    } else (tankAfterDrive < 0) {
+    } else if (tankAfterDrive <= 0) {
       this.odometer = this.odometer + drivableMiles;
       this.tank = this.tank - this.tank;
       return `I ran out of fuel at ${this.odometer} miles!`;
@@ -114,6 +114,11 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
+  constructor (name, age, location){
+    this.name = name;
+    this.age = age;
+    this.location = location;
+  }
 
 }
 
