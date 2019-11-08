@@ -114,10 +114,10 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-  constructor ({name, age, location}){
-    this.name = name;
-    this.age = age;
-    this.location = location;
+  constructor (object){
+    this.name = object.name;
+    this.age = object.age;
+    this.location = object.location;
   }
 
   speak(){
@@ -140,17 +140,17 @@ class Lambdasian {
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 class Instructor extends Lambdasian {
-  constructor({name, age, location, specialty, favLanguage, catchPhrase}) {
-    super({name, age, location, specialty, favLanguage, catchPhrase});
-    this.specialty = specialty;
-    this.favLanguage = favLanguage;
-    this.catchPhrase = catchPhrase;
+  constructor(object) {
+    super(object);
+    this.specialty = object.specialty;
+    this.favLanguage = object.favLanguage;
+    this.catchPhrase = object.catchPhrase;
   }
   demo(subject){
     return `Today we are learning about ${subject}`;
   }
 
-  grade({student}, subject){
+  grade(student, subject){
     return `${student.name} receives a perfect score on ${subject}`;
   }
 }
@@ -171,11 +171,11 @@ class Instructor extends Lambdasian {
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 class Student extends Lambdasian{
-  constructor ({name, age, location, previousBackground, className, favSubjects}){
-    super ({name, age, location, previousBackground, className, favSubjects})
-    this.previousBackground = previousBackground;
-    this.className = className;
-    this.favSubjects = favSubjects;
+  constructor (object){
+    super (object)
+    this.previousBackground = object.previousBackground;
+    this.className = object.className;
+    this.favSubjects = object.favSubjects;
   }
 
   listSubjects(){
